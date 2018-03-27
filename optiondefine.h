@@ -1,4 +1,0 @@
-#ifndef OPTIONDEFINE_H
-#define OPTIONDEFINE_H
-
-#endif // OPTIONDEFINE_H

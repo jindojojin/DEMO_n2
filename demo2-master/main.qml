@@ -1,11 +1,16 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
+import ScriptCreatorDomain 1.0
 Window {
     id: window
     visible: true
     width: 1000
     height: 700
+
     title: qsTr("Demo")
+    ScriptCreatorController {
+        id: scriptCreatorController
+    }
 
     Column {
         id: column
@@ -76,7 +81,7 @@ Window {
                     color: "#807c7c"
                     anchors.top: parent.top
                     anchors.topMargin: 0
-                    anchors.bottomMargin: 0
+                    anchors.bottomMargin: 10
                     anchors.bottom: parent.bottom
                     anchors.left: step2.right
 
@@ -91,15 +96,6 @@ Window {
                         font.pixelSize: 12
                     }
                 }
-            }
-
-            Image {
-                id: image
-                width: 124
-                height: 100
-                anchors.left: parent.left
-                anchors.leftMargin: 0
-                source: "demo.PNG"
             }
         }
 
@@ -235,7 +231,6 @@ Window {
                         anchors.left: parent.left
                         onEntered: {step1.color = '#d8d8d8'; rectangle1.color = '#807c7c'}
                         onExited: {rectangle1.color = "#d8d8d8";}
-                        onClicked: {}
                     }
                 }
 
@@ -246,7 +241,7 @@ Window {
                     height: 82
                     color: "#d8d8d8"
                     anchors.bottom: rectangle.top
-                    signal qmlSignal(string msg)
+                    anchors.bottomMargin: 0
                     Text {
                         id: text2
                         color: "#555252"
@@ -277,7 +272,7 @@ Window {
                     Text {
                         id: text3
                         color: "#555252"
-                        text: qsTr("tùy chỉnh")
+                        text: qsTr("thu thập tiêu chuẩn")
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
                         font.bold: true
@@ -355,6 +350,16 @@ Window {
                 }
             }
         }
+    }
+
+    Image {
+        id: image
+        y: 0
+        width: 124
+        height: 100
+        anchors.left: parent.left
+        anchors.leftMargin: 0
+        source: "demo.PNG"
     }
 
 

@@ -1,25 +1,12 @@
-#ifndef ScriptCreatorController_H
-#define ScriptCreatorController_H
-
 #include <QObject>
 #include <QString>
-
+#include <iostream>
 class ScriptCreatorController : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString userName READ userName WRITE setUserName NOTIFY userNameChanged)
-
 public:
-    explicit ScriptCreatorController(QObject *parent = nullptr);
-
-    QString userName();
-    void setUserName(const QString &userName);
-
-signals:
-    void userNameChanged();
-
-private:
-    QString m_userName;
+    Q_INVOKABLE bool postMessage(const QString &msg) {
+        std::cout << "success";
+        return true;
+    }
 };
-
-#endif // ScriptCreatorController_H

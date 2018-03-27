@@ -5,7 +5,5 @@
         <file>center.png</file>
         <file>thuthap.png</file>
         <file>phantich.png</file>
-        <file>ScriptCreatorUI.qml</file>
-        <file>MyItem.qml</file>
     </qresource>
 </RCC>
